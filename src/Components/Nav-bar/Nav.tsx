@@ -1,8 +1,10 @@
 
 
 export const Nav = () => {
-    return <div className="h-14 w-screen bg-gray-800 px-20 flex justify-between items-center border relative border-gray-700 left-0 top-0 mb-10">
-        <div>active-eyes</div>
+    return <div className="h-14 w-full bg-gray-800 px-20 flex justify-between items-center border fixed border-gray-700 top-0 overflow-hidden z-20">
+        <div className="text-xl">
+            active-eyes
+        </div>
         <div className="flex justify-between items-center gap-10">
             <div>Hollywood</div>
             <div>Bollywood</div>
