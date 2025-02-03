@@ -1,7 +1,7 @@
 
 
 export const Nav = () => {
-    return <div className="h-14 w-full bg-gray-800 px-20 flex justify-between items-center border fixed border-gray-700 top-0 overflow-hidden z-20">
+    return <div className="h-14 w-full bg-gray-900 px-20 flex justify-between items-center border fixed border-gray-800 top-0 overflow-hidden z-20">
         <div className="text-xl">
             active-eyes
         </div>
