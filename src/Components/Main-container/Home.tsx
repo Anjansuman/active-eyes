@@ -1,4 +1,3 @@
-import { IMG_URL } from "../../config"
 import { MoviePoster } from "./MoviePoster"
 
 
@@ -11,8 +10,8 @@ export const Home = ({ data }: HomeProps) => {
 
     return <div>
 
-        {data.map((movie: {poster_path: string, title: string, vote_average: string, overview: string}) => (
-            <MoviePoster poster={movie.poster_path} title={movie.title} rating={movie.vote_average} description={movie.overview}></MoviePoster>
+        {data.map((movie: {id: number, poster_path: string, title: string, vote_average: string, overview: string}) => (
+            <MoviePoster id={movie.id} poster={movie.poster_path} title={movie.title} rating={movie.vote_average} description={movie.overview}></MoviePoster>
         ))}
 
     </div>
