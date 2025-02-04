@@ -1,6 +1,6 @@
 
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import { API_KEY, BASE_URL, IMG_URL, VIDEO_URL } from "../../config";
 import { BackArrow } from "../icons/BackArrow";
 import { Nav } from "../Nav-bar/Nav";
@@ -18,6 +18,8 @@ export const MoviePanel = () => {
 
     const { id } = useParams<{ id: string }>();
     const [movie, setMovie] = useState<Movie | null>(null);
+
+    const navigate = useNavigate();
 
     useEffect(() => {
         fetch(`${BASE_URL}/movie/${id}?${API_KEY}`)
@@ -37,7 +39,10 @@ export const MoviePanel = () => {
         <div className="h-screen w-full p-7">
             <div className="h-full w-full mt-10 bg-gray-900 rounded-3xl border p-6 border-gray-800 overflow-y-scroll">
                 <div className="h-16 text-white text-[34px] font-bold flex items-center mb-6">
-                    <div className="flex items-center mr-3 py-1 rounded-bl-xl rounded-tl-xl hover:bg-gray-800 transition-colors duration-150 cursor-pointer">
+                    <div
+                        className="flex items-center mr-3 py-1 rounded-l-xl hover:bg-gray-800 transition-colors duration-150 cursor-pointer"
+                        onClick={() => navigate(-1)}
+                    >
                         <BackArrow />
                     </div>
                     {movie.title}
